@@ -2,9 +2,6 @@ import React from "react";
 import Image from "next/image";
 
 
-
-
-
 const description = " Hi, I’m Krushna a rising sophomore at UNC Chapel Hill focused on applying full-stack solutions/AI, electrical systems, and mechanical design to tackle challenges in tech, aerospace, and biomedical innovation. I do what it takes to turn ambitious ideas into reliable solutions for humanity. End to end, I design, build, test, and deliver systems that advance tech, aerospace, medicine, and intelligent systems."
 
 export default function AboutMe() {

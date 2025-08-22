@@ -1,4 +1,3 @@
-import { link } from "fs";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 

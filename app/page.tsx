@@ -5,7 +5,6 @@ import { Providers } from "./components/Providers";
 import AboutMe from "./components/AboutMe";
 import MyWork from "./components/MyWork";
 import SkillsAccordion   from "./components/SkillsAccordian";
-// import TechStackGrid     from "./components/TechStackGrid";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 
@@ -24,8 +23,7 @@ export default function Home() {
 
     <MyWork/>
     <SkillsAccordion/>
-{/* 
-    <TechStackGrid/> */}
+
     <Contact/>
     <Footer/>
   </>
