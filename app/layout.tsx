@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Ovo } from "next/font/google";
 import "./globals.css";
-
+import { Analytics } from '@vercel/analytics/next';
 
 const outfitFont = Poppins({
   variable: "--font-poppins",
@@ -33,6 +33,7 @@ export default function RootLayout({
       >
 
         {children}
+        <Analytics />
       </body>
     </html>
   );
