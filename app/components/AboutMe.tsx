@@ -13,7 +13,7 @@ export default function AboutMe() {
       <div className="grid md:grid-cols-[1fr_1.5fr] gap-10 items-center">
         <div className="relative aspect-square w-full overflow-hidden rounded-2xl border">
           <Image
-            src="/Headshot.jpg"
+            src="/projects/Headshot.jpg"
             alt="Portrait"
             fill
             className="object-cover"
