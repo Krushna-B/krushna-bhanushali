@@ -7,8 +7,8 @@ const projects = [
   { title: "Sentinel — LEO Object Map", image: "/projects/Sentinel.png", href:"https://sentinel-v0.vercel.app/", tags: ["FastApi", "Next.js/React.js", "Python", "PostgreSQL", "AWS Lambda"] },
   { title: "Genesis I", image: "/projects/Genesis2.png",href:"", tags: ["Fusion 360", "OpenRocket", "ANSYS CFD", "Propulsion", "Avionics"]},
   { title: "TESSA – Genesis I Flight Computer", href:"",image: "/projects/TESSA.png", tags: ["Circut Design","Embedded Systems","KiCad","Power Electronics"] },
-  { title: "Brain Tumor AI Recognition", href:"",image: "/projects/BrainTumor.png",  tags: ["Python", "PyTorch", "Medical Imaging", "MRI", "CNN"]},
-  { title: "MedTrak", image: "/projects/MedTrak.png", href:"",tags: ["Swift", "SwiftUI", "iOS"] },
+  { title: "Brain Tumor AI Recognition", href:"https://github.com/Krushna-B/-Brain-Tumor-AI-Recognition",image: "/projects/BrainTumor.png",  tags: ["Python", "PyTorch", "Medical Imaging", "MRI", "CNN"]},
+  { title: "MedTrak", image: "/projects/MedTrak.png", href:"https://github.com/Krushna-B/MedTrak",tags: ["Swift", "SwiftUI", "iOS"] },
 ];
 
 export default function MyWork() {
