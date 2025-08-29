@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 
 
 const projects = [
-  { title: "Sentinel — LEO Object Map", image: "", href:"", tags: ["React.Js", "TypeScript", "FastAPI", "PostgreSQL", "AWS Lambda"] },
+  { title: "Sentinel — LEO Object Map", image: "/projects/Sentinel.png", href:"", tags: ["FastApi", "Next.js/React.js", "Python", "PostgreSQL", "AWS Lambda"] },
   { title: "Genesis I", image: "/projects/Genesis2.png",href:"", tags: ["Fusion 360", "OpenRocket", "ANSYS CFD", "Propulsion", "Avionics"]},
   { title: "TESSA – Genesis I Flight Computer", href:"",image: "/projects/TESSA.png", tags: ["Circut Design","Embedded Systems","KiCad","Power Electronics"] },
   { title: "Brain Tumor AI Recognition", href:"",image: "/projects/BrainTumor.png",  tags: ["Python", "PyTorch", "Medical Imaging", "MRI", "CNN"]},
