@@ -35,8 +35,10 @@ const projects: Project[] = [
   {
     title: "Redis Clone",
     description:
-      "Hardware accelerator for CNN inference on Artix-7 architecture.",
+      " A Redis-style, in-memory key-value server built from scratch in C to learn network programming, event-driven I/O, data structures, and concurrency.",
     tags: ["C", "Network Programming", "Data Structures"],
+    glowPosition: "left",
+    githubUrl: "https://github.com/Krushna-B/redis-clone",
   },
   {
     title: "TESAA Flight Computer",
@@ -55,16 +57,20 @@ const projects: Project[] = [
   {
     title: "Flight Computer Software",
     description:
-      "ML dashboard visualizing neural network training in real-time for educational purposes.",
+      "Flight computer firmware for launch vehicles, based on the ESP32 and FreeRTOS, handling real-time sensor data, flight-state logic, and telemetry.",
     tags: ["C", "Embedded Systems", "FreeRTOS", "ESP-IDF", "Firmware"],
     isLarge: true,
+    glowPosition: "left",
+    githubUrl: "https://github.com/Krushna-B/tessa_v3",
   },
-  // {
-  //   title: "Pineapple",
-  //   description:
-  //     "ML dashboard visualizing neural network training in real-time for educational purposes.",
-  //   tags: ["Python", "TensorFlow"],
-  // },
+  {
+    title: "OpenCV Face Detection",
+    description:
+      "Real-time face detection using OpenCV DNN with pretrained SSD + ResNet-10 models for image and webcam input.",
+    tags: ["Python", "OpenCV", "Computer Vision"],
+    glowPosition: "left",
+    githubUrl: "https://github.com/Krushna-B/opencv-face-detection",
+  },
 ];
 
 export default function Projects() {
