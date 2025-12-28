@@ -16,7 +16,8 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Sentinel",
-    description: "Application for real-time satellite visualization.",
+    description:
+      "Full Stack application for real-time satellite visualization.",
     tags: ["Python", "FastAPI", "PostgreSQL", "Next.js"],
     isLarge: true,
     glowPosition: "left",
