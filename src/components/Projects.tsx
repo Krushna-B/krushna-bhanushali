@@ -24,13 +24,13 @@ const projects: Project[] = [
     image: "/projects/Sentinel2.png",
   },
   {
-    title: "C Shell",
+    title: "Ground Control System",
     description:
-      "Designed a minimal Unix shell in C supporting built-ins, tokenization, and process launching via fork/exec",
-    tags: ["C", "OS", "Make"],
+      "Real-time rocket telemetry visualization system with live data streaming, flight monitoring, and post-flight analysis.",
+    tags: ["Full-Stack", "Typescript", "Redis", "MongoDB", "WebSockets"],
     glowPosition: "left",
-    githubUrl: "https://github.com/Krushna-B/c-shell",
-    image: "",
+    githubUrl: "https://github.com/Krushna-B/ground_control_system",
+    image: "/projects/Telemetry.png",
   },
   {
     title: "Redis Clone",
