@@ -24,21 +24,30 @@ const projects: Project[] = [
     image: "/projects/Sentinel2.png",
   },
   {
-    title: "Ground Control System",
-    description:
-      "Real-time rocket telemetry visualization system with live data streaming, flight monitoring, and post-flight analysis.",
-    tags: ["Full-Stack", "Typescript", "Redis", "MongoDB", "WebSockets"],
-    glowPosition: "left",
-    githubUrl: "https://github.com/Krushna-B/ground_control_system",
-    image: "/projects/Telemetry.png",
-  },
-  {
     title: "Redis Clone",
     description:
       " A Redis-style, in-memory key-value server built from scratch in C to learn network programming, event-driven I/O, data structures, and concurrency.",
     tags: ["C", "Network Programming", "Data Structures"],
     glowPosition: "left",
     githubUrl: "https://github.com/Krushna-B/redis-clone",
+  },
+  {
+    title: "OpenCV Face Detection",
+    description:
+      "Real-time face detection using OpenCV DNN with pretrained SSD + ResNet-10 models for image and webcam input.",
+    tags: ["Python", "OpenCV", "Computer Vision"],
+    glowPosition: "left",
+    githubUrl: "https://github.com/Krushna-B/opencv-face-detection",
+  },
+  {
+    title: "Ground Control System",
+    description:
+      "Real-time rocket telemetry visualization system with live data streaming, flight monitoring, and post-flight analysis.",
+    tags: ["Full-Stack", "Typescript", "Redis", "MongoDB", "WebSockets"],
+    glowPosition: "left",
+    isLarge: true,
+    githubUrl: "https://github.com/Krushna-B/ground_control_system",
+    image: "/projects/Telemetry.png",
   },
   {
     title: "TESAA Flight Computer",
@@ -59,17 +68,9 @@ const projects: Project[] = [
     description:
       "Flight computer firmware for launch vehicles, based on the ESP32 and FreeRTOS, handling real-time sensor data, flight-state logic, and telemetry.",
     tags: ["C", "Embedded Systems", "FreeRTOS", "ESP-IDF", "Firmware"],
-    isLarge: true,
+    isLarge: false,
     glowPosition: "left",
     githubUrl: "https://github.com/Krushna-B/tessa_v3",
-  },
-  {
-    title: "OpenCV Face Detection",
-    description:
-      "Real-time face detection using OpenCV DNN with pretrained SSD + ResNet-10 models for image and webcam input.",
-    tags: ["Python", "OpenCV", "Computer Vision"],
-    glowPosition: "left",
-    githubUrl: "https://github.com/Krushna-B/opencv-face-detection",
   },
 ];
 
