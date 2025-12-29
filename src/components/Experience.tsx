@@ -5,20 +5,18 @@ const jobs = [
     title: "AI Researcher",
     company: "Bai Lab",
     location: "UNC Chapel Hill",
-    period: "November 2024 - Present",
+    period: "April 2024 - Present",
     responsibilities: [
-      "Implemented high-throughput data ingestion measured by 4.32 million readings per day by streaming 100 sensor readings/sec from Web Bluetooth Low Energy (Web BLE) into Firestore.",
-      "Applied a Conv2D - GRU hybrid deep learning model in PyTorch to recognize 26 ASL gestures from 48 NIRS photodiode signals via wearables sensors.",
+      "Deep Learning Applications in NIRS Wearables",
+      "Built Full-Stack Application for Real-Time Wearable Sensor Readings",
     ],
   },
   {
     title: "Autonomous Vehicle Engineer",
     company: "Rams Engineering",
     location: "UNC Chapel Hill",
-    period: "Auguest 2025 - Present",
-    responsibilities: [
-      "Developed an interactive data visualization tool for analyzing climate change patterns using D3.js.",
-    ],
+    period: "August 2025 - Present",
+    responsibilities: ["Development of Campus Autonomous Vehicle Delivery Bot"],
   },
   {
     title: "Software Engineer",
@@ -26,8 +24,16 @@ const jobs = [
     location: "UNC Chapel Hill",
     period: "April 2025 - Present",
     responsibilities: [
-      "Developed an interactive data visualization tool for analyzing climate change patterns using D3.js.",
+      "Ground Control System",
+      "Flight Computer Software and Hardware Design",
     ],
+  },
+  {
+    title: "Software Engineer",
+    company: "CS+Social Good",
+    location: "UNC Chapel Hill",
+    period: "August 2025 - Present",
+    responsibilities: ["Authentication and Management Dashboards"],
   },
 ];
 
@@ -38,13 +44,13 @@ export default function Experience() {
         <h2 className="text-2xl md:text-3xl font-medium text-white tracking-tight">
           Work History
         </h2>
-        <a
+        {/* <a
           href="#"
           className="hidden md:flex items-center gap-1 text-sm text-zinc-500 hover:text-white transition-colors"
         >
           Download Resume
           <Download size={14} />
-        </a>
+        </a> */}
       </div>
 
       <div className="relative space-y-12 pl-2">
