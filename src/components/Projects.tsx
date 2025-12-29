@@ -106,11 +106,15 @@ export default function Projects() {
 
             {/* Hover Arrow */}
             <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <ArrowUpRight
-                size={20}
-                className="text-white"
+              <a
                 href={project.githubUrl}
-              />
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex cursor-pointer"
+                aria-label="Open GitHub"
+              >
+                <ArrowUpRight size={20} className="text-white" />
+              </a>
             </div>
 
             {/* Content */}
