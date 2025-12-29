@@ -9,14 +9,45 @@ const Xlink = "";
 const Email = "Krushna.Bhanushali@unc.edu";
 
 export default function Contact() {
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xeeqnzwe";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = async () => {};
+  const [status, setStatus] = useState("idle");
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Failed to send");
+
+      setStatus("sent");
+      setFormData({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
+  };
   return (
     <section id="contact" className="border-t border-zinc-800 pt-16">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
@@ -39,47 +70,57 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <form
-          className="w-full md:w-1/2 space-y-4"
-          onSubmit={(e) => e.preventDefault()}
-        >
+        <form className="w-full md:w-1/2 space-y-4" onSubmit={handleSubmit}>
           <div className="grid grid-cols-2 gap-4">
             <input
+              name="name"
               type="text"
               placeholder="Name"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
+              value={formData.name ?? ""}
+              onChange={handleChange}
               className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-all placeholder:text-zinc-600"
+              required
             />
             <input
+              name="email"
               type="email"
               placeholder="Email"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
+              value={formData.email ?? ""}
+              onChange={handleChange}
               className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-all placeholder:text-zinc-600"
+              required
             />
           </div>
+
           <textarea
+            name="message"
             rows={4}
             placeholder="Message"
-            value={formData.message}
-            onChange={(e) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
+            value={formData.message ?? ""}
+            onChange={handleChange}
             className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 transition-all placeholder:text-zinc-600 resize-none"
-          ></textarea>
+            required
+          />
+
           <button
-            type="button"
-            onClick={handleSubmit}
-            className="w-full bg-white text-black font-medium text-sm py-3 rounded-lg hover:bg-zinc-200 transition-colors flex justify-center items-center gap-2"
+            type="submit"
+            disabled={status === "sending"}
+            className="w-full bg-white text-black font-medium text-sm py-3 rounded-lg hover:bg-zinc-200 transition-colors flex justify-center items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Send Message
+            {status === "sending" ? "Sending..." : "Send Message"}
             <Send size={14} />
           </button>
+
+          {status === "sent" && (
+            <p className="text-sm text-zinc-400">
+              Sent - I’ll get back to you soon.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-sm text-red-400">
+              Something went wrong. Try again.
+            </p>
+          )}
         </form>
       </div>
 
