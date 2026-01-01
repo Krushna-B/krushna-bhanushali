@@ -33,12 +33,12 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Krushna-B/redis-clone",
   },
   {
-    title: "OpenCV Face Detection",
+    title: "MIRA",
     description:
-      "Real-time face detection using OpenCV DNN with pretrained SSD + ResNet-10 models for image and webcam input.",
-    tags: ["Python", "OpenCV", "Computer Vision"],
+      "Backend for Intelligent conversational AI assistant with RAG-powered contextual memory using LangChain, Pinecone, and OpenAI.",
+    tags: ["RAG", "Langchain", "Pinecone", "OpenAI API", "Flask", "Celery"],
     glowPosition: "left",
-    githubUrl: "https://github.com/Krushna-B/opencv-face-detection",
+    githubUrl: "https://github.com/Krushna-B/MIRA",
   },
   {
     title: "Ground Control System",
