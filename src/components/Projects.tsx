@@ -2,78 +2,8 @@
 
 import { ArrowUpRight, Github } from "lucide-react";
 import Image from "next/image";
-
-interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  isLarge?: boolean;
-  glowPosition?: "right" | "left";
-  githubUrl?: string;
-  image?: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "Sentinel",
-    description:
-      "Full Stack application for real-time satellite visualization.",
-    tags: ["Python", "FastAPI", "PostgreSQL", "Next.js"],
-    isLarge: true,
-    glowPosition: "left",
-    githubUrl: "https://github.com/Krushna-B/Sentinel",
-    image: "/projects/Sentinel2.png",
-  },
-  {
-    title: "Redis Clone",
-    description:
-      " A Redis-style, in-memory key-value server built from scratch in C to learn network programming, event-driven I/O, data structures, and concurrency.",
-    tags: ["C", "Network Programming", "Data Structures"],
-    glowPosition: "left",
-    githubUrl: "https://github.com/Krushna-B/redis-clone",
-  },
-  {
-    title: "MIRA",
-    description:
-      "Backend for Intelligent conversational AI assistant with RAG-powered contextual memory using LangChain, Pinecone, and OpenAI.",
-    tags: ["RAG", "Langchain", "Pinecone", "OpenAI API", "Flask", "Celery"],
-    glowPosition: "left",
-    githubUrl: "https://github.com/Krushna-B/MIRA",
-  },
-  {
-    title: "Ground Control System",
-    description:
-      "Real-time rocket telemetry visualization system with live data streaming, flight monitoring, and post-flight analysis.",
-    tags: ["Full-Stack", "Typescript", "Redis", "MongoDB", "WebSockets"],
-    glowPosition: "left",
-    isLarge: true,
-    githubUrl: "https://github.com/Krushna-B/ground_control_system",
-    image: "/projects/Telemetry.png",
-  },
-  {
-    title: "TESAA Flight Computer",
-    description:
-      "Low-cost myoelectric prosthetic hand using EMG sensors and TinyML for gesture classification (94% accuracy).",
-    tags: [
-      "Commerial Hardware",
-      "Embedded Systems,",
-      "PCB Design",
-      "Power Electronics",
-    ],
-    isLarge: true,
-    glowPosition: "left",
-    image: "/projects/TESSA.png",
-  },
-  {
-    title: "Flight Computer Software",
-    description:
-      "Flight computer firmware for launch vehicles, based on the ESP32 and FreeRTOS, handling real-time sensor data, flight-state logic, and telemetry.",
-    tags: ["C", "Embedded Systems", "FreeRTOS", "ESP-IDF", "Firmware"],
-    isLarge: false,
-    glowPosition: "left",
-    githubUrl: "https://github.com/Krushna-B/tessa_v3",
-  },
-];
+import Link from "next/link";
+import { projectsData } from "@/data/projectsData";
 
 export default function Projects() {
   return (
@@ -85,9 +15,10 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {projects.map((project, index) => (
-          <div
-            key={project.title}
+        {projectsData.map((project) => (
+          <Link
+            key={project.id}
+            href={`/projects/${project.id}`}
             className={`group relative bg-zinc-900/40 border border-zinc-800/50 rounded-lg overflow-hidden min-h-[300px] flex flex-col justify-between p-6 cursor-pointer transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60 ${
               project.isLarge ? "md:col-span-2" : ""
             }`}
@@ -106,15 +37,7 @@ export default function Projects() {
 
             {/* Hover Arrow */}
             <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex cursor-pointer"
-                aria-label="Open GitHub"
-              >
-                <ArrowUpRight size={20} className="text-white" />
-              </a>
+              <ArrowUpRight size={20} className="text-white" />
             </div>
 
             {/* Content */}
@@ -131,15 +54,11 @@ export default function Projects() {
                   ))}
                 </div>
                 {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="text-zinc-500 hover:text-white transition-colors"
-                  >
-                    <Github size={18} strokeWidth={1.5} />
-                  </a>
+                  <Github
+                    size={18}
+                    strokeWidth={1.5}
+                    className="text-zinc-500"
+                  />
                 )}
               </div>
 
@@ -154,7 +73,7 @@ export default function Projects() {
                   project.isLarge ? "max-w-md" : ""
                 }`}
               >
-                {project.description}
+                {project.shortDescription}
               </p>
             </div>
 
@@ -168,7 +87,7 @@ export default function Projects() {
             {project.isLarge && project.glowPosition === "left" && (
               <div className="absolute top-8 left-8 w-64 h-64 bg-zinc-800/20 rounded-full blur-3xl group-hover:bg-zinc-700/20 transition-colors duration-700 pointer-events-none"></div>
             )}
-          </div>
+          </Link>
         ))}
       </div>
     </section>
